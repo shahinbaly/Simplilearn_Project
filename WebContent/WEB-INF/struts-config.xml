@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+    <form-beans>
+    	<form-bean name="logInBean" type="com.bean.LogInBean"/>
+    	<form-bean name="subjectBean" type="com.bean.SubjectBean"/>
+    	<form-bean name="classBean" type="com.bean.ClassBean"/>
+    	<form-bean name="teacherBean" type="com.bean.TeacherBean"/>
+    	<form-bean name="studentBean" type="com.bean.StudentBean"/>
+    	<form-bean name="assignClassForSubjectBean" type="com.bean.AssignClassForSubjectBean"/>
+    	<form-bean name="assignTeacherBean" type="com.bean.AssignTeacherBean"/>
+    	<form-bean name="classReportBean" type="com.bean.ClassReportBean"/>
+    	
+    </form-beans>
+
+	<global-forwards></global-forwards>
+
+    <action-mappings>
+   
+   
+   
+     <action path="/logIn" 
+		type="com.action.LogInAction" 
+		name="logInBean" 
+		validate="false" 
+		input="/index.jsp">
+      <forward name="success" path="/index.jsp"/>
+      <forward name="failure" path="/index.jsp"/>      
+    </action>
+     <action path="/adminLogIn" 
+		type="com.action.LogInAction" 
+		name="logInBean" 
+		validate="false" 
+		input="/index.jsp">
+      <forward name="success" path="/views/menu.jsp"/>
+      <forward name="failure" path="/index.jsp"/>      
+    </action>
+     <action path="/subjectInformation" 
+		type="com.action.SubjectAction" 
+		name="subjectBean" 
+		validate="false" 
+		input="/SubjectInformation.jsp">
+      <forward name="success" path="/views/SubjectInformation.jsp"/>
+      <forward name="failure" path="/views/SubjectInformation.jsp"/>      
+    </action>
+     <action path="/addSubject" 
+		type="com.action.SubjectAction" 
+		name="subjectBean" 
+		validate="false" 
+		input="/SubjectInformation.jsp">
+      <forward name="success" path="/views/SubjectInformation.jsp"/>
+      <forward name="failure" path="/views/SubjectInformation.jsp"/>      
+    </action>
+    <action path="/classInformation" 
+		type="com.action.ClassAction" 
+		name="classBean" 
+		validate="false" 
+		input="/ClassInformation.jsp">
+      <forward name="success" path="/views/ClassInformation.jsp"/>
+      <forward name="failure" path="/views/ClassInformation.jsp"/>      
+    </action>
+    <action path="/addClass" 
+		type="com.action.ClassAction" 
+		name="classBean" 
+		validate="false" 
+		input="/ClassInformation.jsp">
+      <forward name="success" path="/views/ClassInformation.jsp"/>
+      <forward name="failure" path="/views/ClassInformation.jsp"/>      
+    </action>
+     <action path="/teahcerInformation" 
+		type="com.action.TeacherAction" 
+		name="teacherBean" 
+		validate="false" 
+		input="/TeacherInformation.jsp">
+      <forward name="success" path="/views/TeacherInformation.jsp"/>
+      <forward name="failure" path="/views/TeacherInformation.jsp"/>      
+    </action>
+    <action path="/addTeahcer" 
+		type="com.action.TeacherAction" 
+		name="teacherBean" 
+		validate="false" 
+		input="/TeacherInformation.jsp">
+      <forward name="success" path="/views/TeacherInformation.jsp"/>
+      <forward name="failure" path="/views/TeacherInformation.jsp"/>      
+    </action>
+    
+     <action path="/studentformation" 
+		type="com.action.StudentAction" 
+		name="studentBean" 
+		validate="false" 
+		input="/StudentInformation.jsp">
+      <forward name="success" path="/views/StudentInformation.jsp"/>
+      <forward name="failure" path="/views/StudentInformation.jsp"/>      
+    </action>    
+    <action path="/addStudent" 
+		type="com.action.StudentAction" 
+		name="studentBean" 
+		validate="false" 
+		input="/StudentInformation.jsp">
+      <forward name="success" path="/views/StudentInformation.jsp"/>
+      <forward name="failure" path="/views/StudentInformation.jsp"/>      
+    </action>
+    
+    <action path="/assignClassForSubject" 
+		type="com.action.AssignClassForSubjectAction" 
+		name="assignClassForSubjectBean" 
+		validate="false" 
+		input="/AssignClassForSubject.jsp">
+      <forward name="success" path="/views/AssignClassForSubject.jsp"/>
+      <forward name="failure" path="/views/AssignClassForSubject.jsp"/>      
+    </action>
+    
+    
+    <action path="/showListClassForSubject" 
+		type="com.action.AssignClassForSubjectAction" 
+		name="assignClassForSubjectBean" 
+		validate="false" 
+		input="/AssignClassForSubject.jsp">
+      <forward name="success" path="/views/AssignClassForSubject.jsp"/>
+      <forward name="failure" path="/views/AssignClassForSubject.jsp"/>      
+    </action>
+    
+     <action path="/addClassForSubject" 
+		type="com.action.AssignClassForSubjectAction" 
+		name="assignClassForSubjectBean" 
+		validate="false" 
+		input="/AssignClassForSubject.jsp">
+      <forward name="success" path="/views/AssignClassForSubject.jsp"/>
+      <forward name="failure" path="/views/AssignClassForSubject.jsp"/>      
+    </action>
+     
+     <action path="/assignTeacher" 
+		type="com.action.AssignTeacherAction" 
+		name="assignTeacherBean" 
+		validate="false" 
+		input="/AssignTeacher.jsp">
+      <forward name="success" path="/views/AssignTeacher.jsp"/>
+      <forward name="failure" path="/views/AssignTeacher.jsp"/>      
+    </action>
+     <action path="/loadSubjectForClass" 
+		type="com.action.AssignTeacherAction" 
+		name="assignTeacherBean" 
+		validate="false" 
+		input="/AssignTeacher.jsp">
+      <forward name="success" path="/views/AssignTeacher.jsp"/>
+      <forward name="failure" path="/views/AssignTeacher.jsp"/>      
+    </action>
+     <action path="/addTeacherForClassSubject" 
+		type="com.action.AssignTeacherAction" 
+		name="assignTeacherBean" 
+		validate="false" 
+		input="/AssignTeacher.jsp">
+      <forward name="success" path="/views/AssignTeacher.jsp"/>
+      <forward name="failure" path="/views/AssignTeacher.jsp"/>      
+    </action>
+  
+    <action path="/classReport" 
+		type="com.action.ClassReportAction" 
+		name="classReportBean" 
+		validate="false" 
+		input="/ClassReport.jsp">
+      <forward name="success" path="/views/ClassReport.jsp"/>
+      <forward name="failure" path="/views/ClassReport.jsp"/>      
+    </action>
+  
+  	<action path="/viewClassReport" 
+		type="com.action.ClassReportAction" 
+		name="classReportBean" 
+		validate="false" 
+		input="/ClassReport.jsp">
+      <forward name="success" path="/views/ClassReport.jsp"/>
+      <forward name="failure" path="/views/ClassReport.jsp"/>      
+    </action>
+   
+  
+     
+    
+    
+  
+    
+    
+    
+
+
+
+
+
+
+
+    </action-mappings>
+
+</struts-config>
